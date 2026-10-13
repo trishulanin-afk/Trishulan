@@ -1,69 +1,252 @@
+import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
+import HeroVideo from "../components/hero-video";
+import CustomerReviews from "../components/customer-reviews";
+
+export const metadata: Metadata = {
+  title: "Import & Export from Andhra Pradesh, India",
+  description:
+    "Meet Trishulan, an import and export business based in Andhra Pradesh, India. Explore rice, chilli, coffee, and machinery categories and discuss a trade enquiry.",
+  alternates: { canonical: "/" },
+};
+
+const productCategories = [
+  {
+    name: "Dry Fruits",
+    description: "Premium Dry Fruits for reliable supply and consistent trade enquiries.",
+    image: "/products/Dry_Fruits.jpg",
+    alt: "Dry Fruits",
+    slug: "dry-fruits",
+  },
+  {
+    name: "Vegetables",
+    description: "Vegetable sourcing for agricultural trade and customer-specific requirements.",
+    image: "/products/Vegetables.jpg",
+    alt: "Fresh vegetables",
+    slug: "vegetables",
+  },
+  {
+    name: "Furniture",
+    description: "Furniture sourcing based on client specifications and market availability.",
+    image: "/products/Furniture.jpeg",
+    alt: "Furniture products",
+    slug: "furniture",
+  },
+  {
+    name: "Machinery",
+    description: "Machinery and equipment sourcing coordinated around client requirements.",
+    image: "/products/Machinery.jpg",
+    alt: "Industrial machinery",
+    slug: "machinery",
+  },
+];
+
+const tradePriorities = [
+  {
+    number: "01",
+    title: "Start with the details",
+    description:
+      "A clear product description, quantity, quality expectations, and destination give every trade enquiry a more useful starting point.",
+  },
+  {
+    number: "02",
+    title: "Plan for the market",
+    description:
+      "Requirements differ by product and destination. Check applicable policies, standards, and import conditions before making commitments.",
+  },
+  {
+    number: "03",
+    title: "Keep records aligned",
+    description:
+      "Consistent product, order, and shipment information makes it easier for buyers and trade partners to coordinate next steps.",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+    <main>
+      <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
+          src="/hero.jpg"
+          alt="Cargo containers ready for international shipping"
+          fill
           priority
+          sizes="100vw"
+          className="home-hero-poster -z-20 object-cover"
         />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+        <HeroVideo />
+        <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
+
+        <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
+          <div className="max-w-3xl">
+            <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#F1D778] sm:text-sm">
+              <span className="h-px w-8 bg-[#D4AF37]" />
+              Based in Andhra Pradesh, India
+            </p>
+            <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
+              Import &amp; export from India.
+            </h1>
+            <p className="mt-5 max-w-xl text-base leading-7 text-slate-100 sm:text-lg sm:leading-8">
+              Trishulan is an import and export business helping turn product enquiries into clear,
+              considered trade conversations.
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/contactus#contact-form"
+                className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#D4AF37] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
+              >
+                Discuss an enquiry
+              </Link>
+            </div>
+          </div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+        <div className="absolute bottom-0 left-0 h-1 w-28 bg-[#D4AF37] sm:w-40" />
+      </section>
+
+      <section className="border-b border-slate-200 bg-white px-4 py-8 sm:px-6 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-5 sm:grid-cols-3 sm:gap-8">
+          <div>
+            <p className="text-sm font-semibold text-[#0B1F3A]">India-based business</p>
+            <p className="mt-1 text-sm leading-6 text-slate-600">Rooted in Andhra Pradesh.</p>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-[#0B1F3A]">Multiple categories</p>
+            <p className="mt-1 text-sm leading-6 text-slate-600">Agricultural goods and machinery.</p>
+          </div>
+          <div>
+            <p className="text-sm font-semibold text-[#0B1F3A]">Trade-focused guidance</p>
+            <p className="mt-1 text-sm leading-6 text-slate-600">Practical resources for import and export.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="categories" className="scroll-mt-24 px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div className="max-w-2xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9A7720]">
+                Explore product categories
+              </p>
+              <h2 className="mt-2 text-3xl font-bold text-[#0B1F3A] sm:text-4xl">
+                What are you looking to trade?
+              </h2>
+              <p className="mt-3 text-base leading-7 text-slate-600">
+                Browse the categories featured by Trishulan and get in touch to discuss a specific
+                requirement.
+              </p>
+            </div>
+            <Link
+              href="/products"
+              className="inline-flex min-h-11 items-center gap-2 text-sm font-semibold text-[#0B1F3A] transition hover:text-[#8A6A1D]"
+            >
+              View all products <span aria-hidden="true">→</span>
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {productCategories.map((category) => (
+              <Link
+                key={category.name}
+                href={`/products/${category.slug}`}
+                className="interactive-surface group overflow-hidden rounded-lg border border-slate-200 bg-white transition duration-200 hover:border-[#D4AF37] hover:shadow-lg hover:shadow-slate-900/5 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]"
+                aria-label={`View ${category.name} product details`}
+              >
+                <div className="relative aspect-[4/3] overflow-hidden bg-slate-100">
+                  <Image
+                    src={category.image}
+                    alt={category.alt}
+                    fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                    className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                  />
+                </div>
+                <div className="p-5">
+                  <h3 className="text-lg font-bold text-[#0B1F3A]">{category.name}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-600">{category.description}</p>
+                  <span className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#8A6A1D]">
+                    View product details <span aria-hidden="true">→</span>
+                  </span>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F3F6F8] px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto max-w-7xl">
+          <div className="max-w-4xl">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9A7720]">
+              A thoughtful approach to trade
+            </p>
+            <h2 className="mt-2 text-3xl font-bold text-[#0B1F3A] sm:text-4xl">
+              Good trade starts with clear information.
+            </h2>
+          </div>
+
+          <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">
+            {tradePriorities.map((priority) => (
+              <article key={priority.number} className="border-t-2 border-[#D4AF37] pt-5">
+                <p className="text-sm font-semibold text-[#9A7720]">{priority.number}</p>
+                <h3 className="mt-3 text-xl font-bold text-[#0B1F3A]">{priority.title}</h3>
+                <p className="mt-3 text-sm leading-7 text-slate-600">{priority.description}</p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <CustomerReviews />
+
+      <section className="bg-[#0B1F3A] px-4 py-10 text-white sm:px-6 lg:px-8">
+        <div className="mx-auto flex max-w-7xl flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h2 className="text-2xl font-bold">Have a product requirement?</h2>
+            <p className="mt-2 max-w-2xl text-sm leading-6 text-slate-300">
+              Share the product, quantity, specification, and destination with Trishulan to start an enquiry.
+            </p>
+          </div>
+          <Link
+            href="/contactus#contact-form"
+            className="inline-flex min-h-12 shrink-0 items-center justify-center rounded-md bg-[#D4AF37] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
           >
+            Discuss your requirement
+          </Link>
+        </div>
+      </section>
+
+      <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
+        <div className="mx-auto grid max-w-7xl gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
+          <div>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9A7720]">
+              Built on clear credentials
+            </p>
+            <h2 className="mt-2 max-w-xl text-3xl font-bold text-[#0B1F3A] sm:text-4xl">
+              The right details make business easier to trust.
+            </h2>
+            <p className="mt-4 max-w-xl text-base leading-7 text-slate-600">
+              Explore Trishulan&apos;s listed business certificates and learn more about the documents
+              that support its trade profile.
+            </p>
+            <Link
+              href="/certificates"
+              className="mt-6 inline-flex min-h-11 items-center justify-center rounded-md border border-[#0B1F3A] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#0B1F3A] hover:text-white"
+            >
+              View certificates
+            </Link>
+          </div>
+          <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-slate-100">
             <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
+              src="/certificates/Import-Export-Code-IEC/Import%20Export%20Code%20(IEC)_page-0001.jpg"
+              alt="Trishulan Import Export Code certificate"
+              fill
+              sizes="(min-width: 1024px) 45vw, 100vw"
+              className="object-contain p-4 sm:p-7"
             />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+          </div>
         </div>
-      </main>
-    </div>
+      </section>
+    </main>
   );
 }

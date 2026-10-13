@@ -2,25 +2,71 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #171717;
+  --foreground: #0f172a;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.site-hero {
+  display: flex;
+  min-height: calc(100svh - 77px);
+  align-items: center;
+}
+
+.interactive-surface {
+  transition:
+    translate 200ms ease,
+    scale 200ms ease,
+    box-shadow 200ms ease,
+    border-color 200ms ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .interactive-surface:hover,
+  .interactive-surface:focus-within {
+    translate: 0 -4px;
+    scale: 1.015;
+    border-color: #d4af37;
+    box-shadow: 0 14px 30px rgb(11 31 58 / 12%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interactive-surface {
+    transition: none;
+  }
+}
+
+.home-hero-video {
+  animation: home-hero-zoom 28s ease-in-out infinite alternate;
+}
+
+@keyframes home-hero-zoom {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.08);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-hero-video {
+    display: none;
+    animation: none;
+  }
 }
