@@ -24,7 +24,7 @@ function Header() {
             <Image src="/logo.png" alt="Trishulan logo" width={44} height={44} className="h-full w-full object-cover" />
           </div>
           <div>
-            <div className="text-lg font-bold tracking-wide text-white">TRISHULAN</div>
+            <div className="text-lg tracking-wide text-white">TRISHULAN</div>
             <div className="text-[10px] font-medium uppercase tracking-[0.22em] text-slate-300">
               Import & Export
             </div>
