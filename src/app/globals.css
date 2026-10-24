@@ -139,3 +139,79 @@ a {
   }
 }
 
+/* Full-width, right-to-left customer review marquee */
+.review-marquee {
+  width: 80%;
+  max-width: 80%;
+  margin-inline: auto;
+  overflow: hidden;
+  padding: 28px 0;
+}
+
+.review-marquee-track {
+  display: flex;
+  width: max-content;
+  align-items: stretch;
+  animation: review-marquee-scroll 45s linear infinite;
+  will-change: transform;
+}
+
+.review-marquee-group {
+  display: flex;
+  flex: 0 0 auto;
+  align-items: stretch;
+  gap: 20px;
+  padding-right: 20px;
+}
+
+.review-card {
+  transform: scale(0.94);
+  transform-origin: center center;
+}
+
+.review-card.is-center {
+  position: relative;
+  z-index: 2;
+  transform: scale(1.04);
+}
+
+/* Pause the animation when a visitor hovers over the reviews */
+.review-marquee:hover .review-marquee-track,
+.review-marquee:focus-within .review-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Seamless loop: the second group duplicates the first */
+@keyframes review-marquee-scroll {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+/* Smaller cards and gaps on phones */
+@media (max-width: 640px) {
+  .review-marquee-group {
+    gap: 12px;
+    padding-right: 12px;
+  }
+
+  .review-marquee {
+    padding: 20px 0;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .review-marquee-track {
+    animation: none;
+    transform: none;
+  }
+
+  .review-marquee {
+    overflow-x: auto;
+  }
+}

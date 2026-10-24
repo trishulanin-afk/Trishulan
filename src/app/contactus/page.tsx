@@ -55,7 +55,7 @@ export default function ContactUsPage() {
           sizes="100vw"
           className="object-cover"
         />
-        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0B1F3A]/70 via-[#0B1F3A]/50 to-[#0B1F3A]/5" />
+        <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/70 to-[#0B1F3A]/5" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-3xl">

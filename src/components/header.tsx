@@ -36,7 +36,7 @@ function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-lg font-bold text-slate-200 transition-colors duration-200 hover:text-[#ffd13b]"
+              className="text-lg text-slate-200 transition-colors duration-200 hover:text-[#ffd13b]"
             >
               {item.label}
             </Link>

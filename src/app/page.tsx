@@ -89,7 +89,6 @@ export default function Home() {
           <source
             src="/herovideo.mp4"
             type="video/mp4"
-            media="(min-width: 768px)"
           />
         </video>
         <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0B1F3A]/70 via-[#0B1F3A]/10 to-[#0B1F3A]/1" />
@@ -201,7 +200,8 @@ export default function Home() {
             <h2 className="mt-2 text-3xl font-bold text-[#0B1F3A] sm:text-4xl">
               Clear requirements. Confident trade.
             </h2>
-            <p>Successful trade begins with the right information, an understanding of market requirements, and clear communication at every stage.</p>
+            <p className="mt-3 text-base leading-7 text-slate-600">
+              Successful trade begins with the right information, an understanding of market requirements, and clear communication at every stage.</p>
           </div>
 
           <div className="mt-10 grid gap-8 md:grid-cols-3 md:gap-10">

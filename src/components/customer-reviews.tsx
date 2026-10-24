@@ -7,6 +7,7 @@ import { Quote, Star } from "lucide-react";
 
 export default function CustomerReviews() {
   const [reviews, setReviews] = useState<CustomerReview[]>([]);
+  const [centerReviewId, setCenterReviewId] = useState<string | null>(null);
   const [isLoading, setIsLoading] = useState(supabase !== null);
   const [loadError, setLoadError] = useState(
     supabase ? "" : "Customer reviews are not configured yet."
@@ -64,6 +65,46 @@ export default function CustomerReviews() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [isFormOpen]);
 
+  useEffect(() => {
+    if (reviews.length === 0 || isLoading || loadError) return;
+
+    let frameId = 0;
+    let lastCenterId: string | null = null;
+
+    const updateCenterReview = () => {
+      const cards = document.querySelectorAll<HTMLElement>(
+        "[data-review-card]"
+      );
+
+      const viewportCenter = window.innerWidth / 2;
+      let closestId: string | null = null;
+      let closestDistance = Infinity;
+
+      cards.forEach((card) => {
+        const rect = card.getBoundingClientRect();
+        const cardCenter = rect.left + rect.width / 2;
+        const distance = Math.abs(cardCenter - viewportCenter);
+        const id = card.dataset.reviewCard;
+
+        if (id && distance < closestDistance) {
+          closestDistance = distance;
+          closestId = id;
+        }
+      });
+
+      if (closestId !== lastCenterId) {
+        lastCenterId = closestId;
+        setCenterReviewId(closestId);
+      }
+
+      frameId = window.requestAnimationFrame(updateCenterReview);
+    };
+
+    frameId = window.requestAnimationFrame(updateCenterReview);
+
+    return () => window.cancelAnimationFrame(frameId);
+  }, [reviews, isLoading, loadError]);
+
   const submitReview = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setSubmitError("");
@@ -119,9 +160,9 @@ export default function CustomerReviews() {
     : null;
 
   return (
-    <section className="overflow-hidden border-y border-slate-200 bg-white px-4 py-8 text-[#0B1F3A] sm:px-6 sm:py-10 lg:px-8">
-      <div className="mx-auto my-10 max-w-7xl rounded-xl border border-slate-200 border-t-4 border-t-[#0B1F3A] bg-white p-6 shadow-sm sm:p-8">
-        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+    <section className="overflow-hidden border-y border-slate-200 bg-white px-4 py-14 text-[#0B1F3A] sm:px-6 sm:py-20 lg:px-8">
+      <div className="mx-auto w-full min-w-0 max-w-7xl">
+        <div className="flex flex-col gap-6 sm:flex-row sm:items-end sm:justify-between">
           <div className="max-w-2xl">
             <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-[#9A7620]">
               <span className="h-px w-8 bg-[#ffd13b]" />
@@ -172,22 +213,29 @@ export default function CustomerReviews() {
             >
               {loadError}
             </div>
-          ) : reviews.length ? (
-            <div className="review-marquee relative">
-              <div className="review-marquee-track">
-                {[0, 1].map((group) => (
-                  <div
-                    key={group}
-                    className="review-marquee-group"
-                    aria-hidden={group === 1 ? true : undefined}
-                  >
-                    {reviews.map((review) => (
+          ) : reviews.length ? (<div className="review-marquee relative mx-auto mt-8">
+            <div className="review-marquee-track">
+              {[0, 1].map((group) => (
+                <div
+                  key={group}
+                  className="review-marquee-group"
+                  aria-hidden={group === 1 ? true : undefined}
+                >
+                  {reviews.map((review) => {
+                    const reviewKey = String(review.id);
+                    const isCenter = centerReviewId === reviewKey;
+
+                    return (
                       <article
                         key={`${group}-${review.id}`}
-                        className="flex w-[300px] shrink-0 flex-col rounded-3xl border border-slate-200/80 bg-white p-6 shadow-[0_8px_30px_rgba(11,31,58,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#ffd13b]/70 hover:shadow-[0_16px_40px_rgba(11,31,58,0.12)] sm:w-[350px] sm:p-7"
+                        data-review-card={reviewKey}
+                        className={`review-card flex w-[280px] shrink-0 flex-col rounded-3xl border bg-white p-5 transition-[transform,border-color,box-shadow] duration-300 sm:w-[330px] sm:p-7 ${isCenter
+                            ? "is-center border-[#B78A16] shadow-[0_16px_45px_rgba(11,31,58,0.18)]"
+                            : "border-slate-200/80 shadow-[0_8px_30px_rgba(11,31,58,0.06)]"
+                          }`}
                       >
-                        <div className="flex items-start justify-between">
-                          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F8F3E3] text-[#9A7620]">
+                        <div className="flex items-start justify-between gap-3">
+                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F8F3E3] text-[#9A7620]">
                             <Quote size={22} aria-hidden="true" />
                           </div>
 
@@ -200,18 +248,22 @@ export default function CustomerReviews() {
                                 key={index}
                                 size={16}
                                 strokeWidth={1.5}
-                                fill={index < review.rating ? "currentColor" : "none"}
+                                fill={
+                                  index < review.rating
+                                    ? "currentColor"
+                                    : "none"
+                                }
                                 aria-hidden="true"
                               />
                             ))}
                           </div>
                         </div>
 
-                        <blockquote className="mt-6 min-h-28 flex-1 text-[15px] leading-7 text-slate-700">
+                        <blockquote className="mt-6 min-h-28 flex-1 break-words text-[15px] leading-7 text-slate-700">
                           “{review.feedback}”
                         </blockquote>
 
-                        <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
+                        <div className="mt-6 flex min-w-0 items-center gap-3 border-t border-slate-100 pt-5">
                           <div
                             className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0B1F3A] text-sm font-bold uppercase text-[#F1D778]"
                             aria-hidden="true"
@@ -219,7 +271,7 @@ export default function CustomerReviews() {
                             {review.customer_name.trim().charAt(0) || "C"}
                           </div>
 
-                          <div className="min-w-0">
+                          <div className="min-w-0 flex-1">
                             <p className="truncate text-sm font-bold text-[#0B1F3A]">
                               {review.customer_name}
                             </p>
@@ -228,15 +280,15 @@ export default function CustomerReviews() {
                             </p>
                           </div>
 
-                          <div className="ml-auto h-2 w-2 shrink-0 rounded-full bg-[#ffd13b]" />
+                          <div className="h-2 w-2 shrink-0 rounded-full bg-[#ffd13b]" />
                         </div>
                       </article>
-                    ))}
-                  </div>
-                ))}
-              </div>
+                    );
+                  })}
+                </div>
+              ))}
             </div>
-          ) : (
+          </div>) : (
             <div className="rounded-3xl border border-slate-200 bg-slate-50 px-6 py-16 text-center">
               <Star
                 size={30}
