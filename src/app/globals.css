@@ -152,7 +152,7 @@ a {
   display: flex;
   width: max-content;
   align-items: stretch;
-  animation: review-marquee-scroll 45s linear infinite;
+  animation: review-marquee-scroll 28s linear infinite;
   will-change: transform;
 }
 
@@ -181,14 +181,13 @@ a {
   animation-play-state: paused;
 }
 
-/* Seamless loop: the second group duplicates the first */
 @keyframes review-marquee-scroll {
   from {
-    transform: translateX(0);
+    transform: translateX(100%);
   }
 
   to {
-    transform: translateX(-50%);
+    transform: translateX(-100%);
   }
 }
 

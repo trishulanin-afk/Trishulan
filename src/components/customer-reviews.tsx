@@ -215,78 +215,68 @@ export default function CustomerReviews() {
             </div>
           ) : reviews.length ? (<div className="review-marquee relative mx-auto mt-8">
             <div className="review-marquee-track">
-              {[0, 1].map((group) => (
-                <div
-                  key={group}
-                  className="review-marquee-group"
-                  aria-hidden={group === 1 ? true : undefined}
-                >
-                  {reviews.map((review) => {
-                    const reviewKey = String(review.id);
-                    const isCenter = centerReviewId === reviewKey;
+              <div className="review-marquee-group">
+                {reviews.map((review) => {
+                  const reviewKey = String(review.id);
+                  const isCenter = centerReviewId === reviewKey;
 
-                    return (
-                      <article
-                        key={`${group}-${review.id}`}
-                        data-review-card={reviewKey}
-                        className={`review-card flex w-[280px] shrink-0 flex-col rounded-3xl border bg-white p-5 transition-[transform,border-color,box-shadow] duration-300 sm:w-[330px] sm:p-7 ${isCenter
-                            ? "is-center border-[#B78A16] shadow-[0_16px_45px_rgba(11,31,58,0.18)]"
-                            : "border-slate-200/80 shadow-[0_8px_30px_rgba(11,31,58,0.06)]"
-                          }`}
-                      >
-                        <div className="flex items-start justify-between gap-3">
-                          <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#F8F3E3] text-[#9A7620]">
-                            <Quote size={22} aria-hidden="true" />
-                          </div>
-
-                          <div
-                            className="flex gap-0.5 text-[#B78A16]"
-                            aria-label={`${review.rating} out of 5 stars`}
-                          >
-                            {Array.from({ length: 5 }, (_, index) => (
-                              <Star
-                                key={index}
-                                size={16}
-                                strokeWidth={1.5}
-                                fill={
-                                  index < review.rating
-                                    ? "currentColor"
-                                    : "none"
-                                }
-                                aria-hidden="true"
-                              />
-                            ))}
-                          </div>
+                  return (
+                    <article
+                      key={review.id}
+                      data-review-card={reviewKey}
+                      className={`review-card flex w-[168px] shrink-0 flex-col rounded-2xl border bg-white p-3 transition-[transform,border-color,box-shadow] duration-300 sm:w-[198px] sm:p-4 ${isCenter
+                          ? "is-center border-[#B78A16] shadow-[0_16px_45px_rgba(11,31,58,0.18)]"
+                          : "border-slate-200/80 shadow-[0_8px_30px_rgba(11,31,58,0.06)]"
+                        }`}
+                    >
+                      <div className="flex items-start justify-between gap-2">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-[#F8F3E3] text-[#9A7620]">
+                          <Quote size={17} aria-hidden="true" />
                         </div>
 
-                        <blockquote className="mt-6 min-h-28 flex-1 break-words text-[15px] leading-7 text-slate-700">
-                          “{review.feedback}”
-                        </blockquote>
-
-                        <div className="mt-6 flex min-w-0 items-center gap-3 border-t border-slate-100 pt-5">
-                          <div
-                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0B1F3A] text-sm font-bold uppercase text-[#F1D778]"
-                            aria-hidden="true"
-                          >
-                            {review.customer_name.trim().charAt(0) || "C"}
-                          </div>
-
-                          <div className="min-w-0 flex-1">
-                            <p className="truncate text-sm font-bold text-[#0B1F3A]">
-                              {review.customer_name}
-                            </p>
-                            <p className="mt-1 truncate text-xs text-slate-500">
-                              {review.company_name || "Verified customer feedback"}
-                            </p>
-                          </div>
-
-                          <div className="h-2 w-2 shrink-0 rounded-full bg-[#ffd13b]" />
+                        <div
+                          className="flex gap-0.5 text-[#B78A16]"
+                          aria-label={`${review.rating} out of 5 stars`}
+                        >
+                          {Array.from({ length: 5 }, (_, index) => (
+                            <Star
+                              key={index}
+                              size={12}
+                              strokeWidth={1.5}
+                              fill={index < review.rating ? "currentColor" : "none"}
+                              aria-hidden="true"
+                            />
+                          ))}
                         </div>
-                      </article>
-                    );
-                  })}
-                </div>
-              ))}
+                      </div>
+
+                      <blockquote className="mt-4 line-clamp-4 min-h-16 flex-1 break-words text-xs leading-5 text-slate-700">
+                        “{review.feedback}”
+                      </blockquote>
+
+                      <div className="mt-4 flex min-w-0 items-center gap-2 border-t border-slate-100 pt-3">
+                        <div
+                          className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0B1F3A] text-xs font-bold uppercase text-[#F1D778]"
+                          aria-hidden="true"
+                        >
+                          {review.customer_name.trim().charAt(0) || "C"}
+                        </div>
+
+                        <div className="min-w-0 flex-1">
+                          <p className="truncate text-xs font-bold text-[#0B1F3A]">
+                            {review.customer_name}
+                          </p>
+                          <p className="mt-1 truncate text-[10px] text-slate-500">
+                            {review.company_name || "Verified customer feedback"}
+                          </p>
+                        </div>
+
+                        <div className="h-1.5 w-1.5 shrink-0 rounded-full bg-[#ffd13b]" />
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
             </div>
           </div>) : (
             <div className="rounded-3xl border border-slate-200 bg-slate-50 px-6 py-16 text-center">
