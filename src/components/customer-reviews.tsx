@@ -3,6 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import { supabase, type CustomerReview } from "@/lib/supabase";
+import { Quote, Star } from "lucide-react";
 
 export default function CustomerReviews() {
   const [reviews, setReviews] = useState<CustomerReview[]>([]);
@@ -112,104 +113,142 @@ export default function CustomerReviews() {
 
   const averageRating = reviews.length
     ? (
-        reviews.reduce((total, review) => total + review.rating, 0) /
-        reviews.length
-      ).toFixed(1)
+      reviews.reduce((total, review) => total + review.rating, 0) /
+      reviews.length
+    ).toFixed(1)
     : null;
 
   return (
     <section className="overflow-hidden border-y border-slate-200 bg-white px-4 py-8 text-[#0B1F3A] sm:px-6 sm:py-10 lg:px-8">
-      <div className="mx-auto max-w-7xl rounded-xl border border-slate-200 border-t-4 border-t-[#0B1F3A] bg-white p-6 shadow-sm sm:p-8">
-        <div className="flex flex-col gap-4 border-b border-[#0B1F3A]/15 pb-4 sm:flex-row sm:items-end sm:justify-between">
-          <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#9A7720]">
-              Customer feedback
+      <div className="mx-auto my-10 max-w-7xl rounded-xl border border-slate-200 border-t-4 border-t-[#0B1F3A] bg-white p-6 shadow-sm sm:p-8">
+        <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
+          <div className="max-w-2xl">
+            <p className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.22em] text-[#9A7620]">
+              <span className="h-px w-8 bg-[#ffd13b]" />
+              TRUST BUILT THROUGH EXPERIENCE
             </p>
-            <h2 className="mt-1 text-2xl font-bold sm:text-3xl">
-              Ratings &amp; feedback
+
+            <h2 className="mt-4 text-3xl font-bold tracking-tight text-[#0B1F3A] sm:text-4xl md:text-5xl">
+              Words from our customers.
             </h2>
-            <p className="mt-2 max-w-xl text-sm leading-6 text-slate-600">
-              Genuine customer reviews appear here after they have been approved.
+
+            <p className="mt-4 text-base text-slate-600">
+              Discover feedback shared by customers who have experienced our service
+              and business approach.
             </p>
           </div>
+
           {averageRating && (
-            <div className="flex shrink-0 items-center gap-3 rounded-lg border border-[#0B1F3A]/10 bg-white px-3 py-2">
-              <span className="text-2xl font-bold text-[#0B1F3A]">
-                {averageRating}
-              </span>
-              <span>
-                <span
-                  className="block text-base tracking-[0.12em] text-[#A66F11]"
-                  aria-label={`${averageRating} out of 5 stars`}
-                >
-                  ★★★★★
-                </span>
-                <span className="block text-[11px] text-slate-600">
-                  {reviews.length} approved {reviews.length === 1 ? "review" : "reviews"}
-                </span>
-              </span>
+            <div className="flex shrink-0 items-center gap-4 rounded-2xl border border-[#ffd13b]/30 bg-[#FBF8EE] px-5 py-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#0B1F3A] text-[#F1D778]">
+                <Star size={24} fill="currentColor" aria-hidden="true" />
+              </div>
+
+              <div>
+                <p className="text-2xl font-bold text-[#0B1F3A]">
+                  {averageRating}<span className="text-base text-slate-500"> / 5</span>
+                </p>
+                <p className="text-xs text-slate-600">
+                  Based on {reviews.length} approved{" "}
+                  {reviews.length === 1 ? "review" : "reviews"}
+                </p>
+              </div>
             </div>
           )}
         </div>
 
-        <div className="mt-5">
+        <div className="mt-8">
           {isLoading ? (
             <div
               role="status"
-              className="flex min-h-[184px] items-center justify-center rounded-lg border border-slate-200 bg-slate-50 px-5 py-8 text-center text-sm text-slate-600"
+              className="rounded-2xl bg-slate-50 px-6 py-16 text-center text-sm text-slate-600"
             >
-              Loading approved reviews...
+              Loading customer experiences...
             </div>
           ) : loadError ? (
             <div
               role="alert"
-              className="flex min-h-[184px] items-center justify-center rounded-lg border border-amber-200 bg-amber-50 px-5 py-8 text-center text-sm leading-6 text-amber-950"
+              className="rounded-2xl border border-amber-200 bg-amber-50 px-6 py-12 text-center text-sm text-amber-950"
             >
               {loadError}
             </div>
           ) : reviews.length ? (
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {reviews.map((review) => (
-                <article
-                  key={review.id}
-                  className="flex min-h-[184px] flex-col rounded-lg border border-slate-200 border-t-4 border-t-[#D4AF37] bg-white p-4 shadow-sm"
-                >
-                  <p
-                    className="text-sm tracking-[0.12em] text-[#A66F11]"
-                    aria-label={`${review.rating} out of 5 stars`}
+            <div className="review-marquee relative">
+              <div className="review-marquee-track">
+                {[0, 1].map((group) => (
+                  <div
+                    key={group}
+                    className="review-marquee-group"
+                    aria-hidden={group === 1 ? true : undefined}
                   >
-                    {"★".repeat(review.rating)}
-                    {"☆".repeat(5 - review.rating)}
-                  </p>
-                  <blockquote className="mt-3 flex-1 text-sm leading-6 text-slate-700">
-                    “{review.feedback}”
-                  </blockquote>
-                  <div className="mt-4 border-t border-slate-200 pt-3">
-                    <p className="text-sm font-bold text-[#0B1F3A]">
-                      {review.customer_name}
-                    </p>
-                    {review.company_name && (
-                      <p className="mt-1 text-xs text-slate-600">
-                        {review.company_name}
-                      </p>
-                    )}
+                    {reviews.map((review) => (
+                      <article
+                        key={`${group}-${review.id}`}
+                        className="flex w-[300px] shrink-0 flex-col rounded-3xl border border-slate-200/80 bg-white p-6 shadow-[0_8px_30px_rgba(11,31,58,0.06)] transition duration-300 hover:-translate-y-1 hover:border-[#ffd13b]/70 hover:shadow-[0_16px_40px_rgba(11,31,58,0.12)] sm:w-[350px] sm:p-7"
+                      >
+                        <div className="flex items-start justify-between">
+                          <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#F8F3E3] text-[#9A7620]">
+                            <Quote size={22} aria-hidden="true" />
+                          </div>
+
+                          <div
+                            className="flex gap-0.5 text-[#B78A16]"
+                            aria-label={`${review.rating} out of 5 stars`}
+                          >
+                            {Array.from({ length: 5 }, (_, index) => (
+                              <Star
+                                key={index}
+                                size={16}
+                                strokeWidth={1.5}
+                                fill={index < review.rating ? "currentColor" : "none"}
+                                aria-hidden="true"
+                              />
+                            ))}
+                          </div>
+                        </div>
+
+                        <blockquote className="mt-6 min-h-28 flex-1 text-[15px] leading-7 text-slate-700">
+                          “{review.feedback}”
+                        </blockquote>
+
+                        <div className="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
+                          <div
+                            className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[#0B1F3A] text-sm font-bold uppercase text-[#F1D778]"
+                            aria-hidden="true"
+                          >
+                            {review.customer_name.trim().charAt(0) || "C"}
+                          </div>
+
+                          <div className="min-w-0">
+                            <p className="truncate text-sm font-bold text-[#0B1F3A]">
+                              {review.customer_name}
+                            </p>
+                            <p className="mt-1 truncate text-xs text-slate-500">
+                              {review.company_name || "Verified customer feedback"}
+                            </p>
+                          </div>
+
+                          <div className="ml-auto h-2 w-2 shrink-0 rounded-full bg-[#ffd13b]" />
+                        </div>
+                      </article>
+                    ))}
                   </div>
-                </article>
-              ))}
+                ))}
+              </div>
             </div>
           ) : (
-            <div className="flex min-h-[184px] items-center justify-center rounded-lg border border-slate-200 border-t-4 border-t-[#D4AF37] bg-white px-5 py-8 text-center shadow-sm">
-              <div>
-                <span aria-hidden="true" className="text-3xl text-[#A66F11]">
-                  ★
-                </span>
-                <p className="mt-2 font-semibold text-[#0B1F3A]">
-                  No reviews published yet
-                </p>
-                <p className="mx-auto mt-1 max-w-lg text-sm leading-6 text-slate-600">
-                  Once a customer review is approved, it will be shown here.
-                </p>
-              </div>
+            <div className="rounded-3xl border border-slate-200 bg-slate-50 px-6 py-16 text-center">
+              <Star
+                size={30}
+                className="mx-auto text-[#B78A16]"
+                aria-hidden="true"
+              />
+              <h3 className="mt-4 text-lg font-semibold text-[#0B1F3A]">
+                Our customer stories start here
+              </h3>
+              <p className="mx-auto mt-2 max-w-md text-sm leading-6 text-slate-600">
+                We look forward to sharing approved customer experiences with you.
+              </p>
             </div>
           )}
         </div>
@@ -222,7 +261,7 @@ export default function CustomerReviews() {
               setSubmitted(false);
               setIsFormOpen(true);
             }}
-            className="inline-flex min-h-10 items-center justify-center rounded-md bg-[#0B1F3A] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#17345B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D4AF37]"
+            className="inline-flex min-h-10 items-center justify-center rounded-md bg-[#0B1F3A] px-5 py-2 text-sm font-semibold text-white transition hover:bg-[#17345B] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ffd13b]"
           >
             Give feedback
           </button>
@@ -236,7 +275,7 @@ export default function CustomerReviews() {
 
       {isFormOpen && (
         <div
-          className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-[#07162B]/70 p-4"
+          className="fixed inset-0 z-100 flex items-center justify-center overflow-y-auto bg-[#07162B]/70 p-4"
           onMouseDown={(event) => {
             if (event.target === event.currentTarget) setIsFormOpen(false);
           }}
@@ -262,7 +301,7 @@ export default function CustomerReviews() {
                 onClick={() => setIsFormOpen(false)}
                 className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-slate-200 text-xl text-slate-600 hover:bg-slate-50"
               >
-                ×
+                x
               </button>
             </div>
 
@@ -302,9 +341,8 @@ export default function CustomerReviews() {
                       aria-label={`${value} star${value === 1 ? "" : "s"}`}
                       aria-pressed={rating === value}
                       onClick={() => setRating(value)}
-                      className={`text-3xl leading-none transition hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9A7720] ${
-                        rating >= value ? "text-[#B78A16]" : "text-slate-300"
-                      }`}
+                      className={`text-3xl leading-none transition hover:scale-110 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#9A7720] ${rating >= value ? "text-[#B78A16]" : "text-slate-300"
+                        }`}
                     >
                       ★
                     </button>

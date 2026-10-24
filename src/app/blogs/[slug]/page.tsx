@@ -114,14 +114,14 @@ async function BlogPostContent({ params }: BlogPostPageProps) {
                 </section>
               ))}
 
-              <aside className="mt-10 border-l-4 border-[#D4AF37] bg-slate-50 px-5 py-4 text-sm leading-6 text-slate-700">
+              <aside className="mt-10 border-l-4 border-[#ffd13b] bg-slate-50 px-5 py-4 text-sm leading-6 text-slate-700">
                 Trade rules, eligibility, rates, and destination requirements can change. Verify current
                 requirements with the relevant official authority and a qualified professional before
                 acting on a shipment.
               </aside>
             </div>
 
-            <aside className="mt-10 rounded-lg border border-[#D4AF37]/50 bg-[#FBF8EA] p-5 sm:p-7">
+            <aside className="mt-10 rounded-lg border border-[#ffd13b]/50 bg-[#FBF8EA] p-5 sm:p-7">
               <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#8A6A1D]">
                 Verify with primary sources
               </p>
@@ -136,7 +136,7 @@ async function BlogPostContent({ params }: BlogPostPageProps) {
                       href={source.href}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-start gap-2 text-sm font-semibold leading-6 text-[#0B1F3A] underline decoration-[#D4AF37]/70 underline-offset-4 transition hover:text-[#8A6A1D]"
+                      className="inline-flex items-start gap-2 text-sm font-semibold leading-6 text-[#0B1F3A] underline decoration-[#ffd13b]/70 underline-offset-4 transition hover:text-[#8A6A1D]"
                     >
                       <span>{source.label}</span>
                       <span aria-hidden="true" className="shrink-0">↗</span>

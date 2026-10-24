@@ -47,19 +47,19 @@ export default function AboutUsPage() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero.jpg"
+          src="/hero3.jpg"
           alt="Trade and agricultural exports from India"
           fill
           priority
           sizes="100vw"
-          className="home-hero-poster -z-20 object-cover"
+          className="object-cover"
         />
-        <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
+        <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-3xl">
             <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#F1D778] sm:text-sm">
-              <span className="h-px w-8 bg-[#D4AF37]" />
+              <span className="h-px w-8 bg-[#ffd13b]" />
               ABOUT TRISHULAN
             </p>
             <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
@@ -73,7 +73,7 @@ export default function AboutUsPage() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/products#product-catalog"
-                className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#D4AF37] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
+                className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#ffd13b] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
               >
                 Explore our products
               </Link>
@@ -86,7 +86,7 @@ export default function AboutUsPage() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 h-1 w-28 bg-[#D4AF37] sm:w-40" />
+        <div className="absolute bottom-0 left-0 h-1 w-28 bg-[#ffd13b] sm:w-40" />
       </section>
 
       <section className="px-4 py-14 sm:px-6 sm:py-20 lg:px-8">
@@ -134,7 +134,7 @@ export default function AboutUsPage() {
 
       <section className="border-y border-slate-200 bg-[#F3F6F8] px-4 py-10 sm:px-6 sm:py-12 lg:px-8">
         <div className="mx-auto grid max-w-7xl gap-5 lg:grid-cols-2">
-          <article className="interactive-surface rounded-xl border border-slate-200 border-t-4 border-t-[#D4AF37] bg-white p-6 shadow-sm sm:p-8">
+          <article className="interactive-surface rounded-xl border border-slate-200 border-t-4 border-t-[#ffd13b] bg-white p-6 shadow-sm sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9A7720]">
               Find our office
             </p>
@@ -154,7 +154,7 @@ export default function AboutUsPage() {
             </a>
           </article>
 
-          <article className="interactive-surface rounded-xl border border-slate-200 border-t-4 border-t-[#D4AF37] bg-white p-6 shadow-sm sm:p-8">
+          <article className="interactive-surface rounded-xl border border-slate-200 border-t-4 border-t-[#ffd13b] bg-white p-6 shadow-sm sm:p-8">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9A7720]">
               Follow and connect
             </p>
@@ -164,7 +164,7 @@ export default function AboutUsPage() {
                 href="https://wa.me/917989273309"
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#D4AF37] hover:bg-white"
+                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#ffd13b] hover:bg-white"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F1D778] text-xs font-bold text-[#0B1F3A]" aria-hidden="true">W</span>
                 <span>
@@ -174,7 +174,7 @@ export default function AboutUsPage() {
               </a>
               <a
                 href="mailto:market@trishulan.com"
-                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#D4AF37] hover:bg-white"
+                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#ffd13b] hover:bg-white"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0B1F3A] text-xs font-bold text-white" aria-hidden="true">@</span>
                 <span>
@@ -186,7 +186,7 @@ export default function AboutUsPage() {
                 href="https://www.instagram.com/trishulan_groups"
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#D4AF37] hover:bg-white"
+                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#ffd13b] hover:bg-white"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#F1D778] text-lg font-bold text-[#0B1F3A]" aria-hidden="true">◎</span>
                 <span>
@@ -198,7 +198,7 @@ export default function AboutUsPage() {
                 href="https://www.linkedin.com/in/surya-sai-allamsetty-839283425"
                 target="_blank"
                 rel="noreferrer"
-                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#D4AF37] hover:bg-white"
+                className="flex min-h-16 items-center gap-3 rounded-lg border border-slate-200 bg-slate-50 px-4 py-3 transition hover:border-[#ffd13b] hover:bg-white"
               >
                 <span className="flex h-9 w-9 items-center justify-center rounded-full bg-[#0B1F3A] text-xs font-bold text-white" aria-hidden="true">in</span>
                 <span>

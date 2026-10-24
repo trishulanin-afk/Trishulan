@@ -20,7 +20,7 @@ function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200 bg-[#0B1F3A]/95 text-white backdrop-blur-sm">
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Trishulan home">
-          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-[#D4AF37] shadow-lg shadow-[#D4AF37]/20">
+          <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-[#ffd13b] shadow-lg shadow-[#ffd13b]/20">
             <Image src="/logo.png" alt="Trishulan logo" width={44} height={44} className="h-full w-full object-cover" />
           </div>
           <div>
@@ -36,7 +36,7 @@ function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-lg font-bold text-slate-200 transition-colors duration-200 hover:text-[#D4AF37]"
+              className="text-lg font-bold text-slate-200 transition-colors duration-200 hover:text-[#ffd13b]"
             >
               {item.label}
             </Link>
@@ -46,7 +46,7 @@ function Header() {
         <div className="hidden lg:block">
           <Link
             href="/contactus#contact-form"
-            className="inline-flex items-center justify-center rounded-md bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
+            className="inline-flex items-center justify-center rounded-md bg-[#ffd13b] px-4 py-2 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
           >
             Get Quote
           </Link>
@@ -57,7 +57,7 @@ function Header() {
           aria-label="Toggle navigation menu"
           aria-expanded={isMenuOpen}
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-600 bg-slate-900/40 text-white transition hover:border-[#D4AF37] hover:text-[#D4AF37] lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-md border border-slate-600 bg-slate-900/40 text-white transition hover:border-[#ffd13b] hover:text-[#ffd13b] lg:hidden"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -84,7 +84,7 @@ function Header() {
                 key={item.href}
                 href={item.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-slate-800 hover:text-[#D4AF37]"
+                className="rounded-md px-3 py-2 text-sm font-medium text-slate-200 transition hover:bg-slate-800 hover:text-[#ffd13b]"
               >
                 {item.label}
               </Link>
@@ -92,7 +92,7 @@ function Header() {
             <Link
               href="/contactus#contact-form"
               onClick={() => setIsMenuOpen(false)}
-              className="mt-2 inline-flex items-center justify-center rounded-md bg-[#D4AF37] px-4 py-2 text-sm font-semibold text-[#0B1F3A]"
+              className="mt-2 inline-flex items-center justify-center rounded-md bg-[#ffd13b] px-4 py-2 text-sm font-semibold text-[#0B1F3A]"
             >
               Get Quote
             </Link>

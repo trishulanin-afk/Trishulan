@@ -22,7 +22,7 @@ export default function HeroVideo() {
       loop
       playsInline
       preload="none"
-      poster="/hero.jpg"
+      poster="/hero.jpeg"
       aria-hidden="true"
       onLoadedMetadata={(event) => applyHalfSpeed(event.currentTarget)}
       onPlay={(event) => applyHalfSpeed(event.currentTarget)}

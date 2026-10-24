@@ -24,19 +24,19 @@ export default function BlogLibrary() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero.jpg"
+          src="/hero4.jpg"
           alt="International shipping and trade research"
           fill
           priority
           sizes="100vw"
-          className="home-hero-poster -z-20 object-cover"
+          className="object-cover"
         />
-        <div className="absolute inset-0 -z-0 bg-gradient-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
+        <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
 
         <div className="relative z-10 mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8">
           <div className="max-w-3xl">
             <p className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-[#F1D778] sm:text-sm">
-              <span className="h-px w-8 bg-[#D4AF37]" />
+              <span className="h-px w-8 bg-[#ffd13b]" />
               TRISHULAN TRADE JOURNAL
             </p>
             <h1 className="mt-5 max-w-2xl text-4xl font-bold leading-tight sm:text-5xl md:text-6xl">
@@ -49,7 +49,7 @@ export default function BlogLibrary() {
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="#guide-library"
-                className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#D4AF37] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
+                className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#ffd13b] px-6 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
               >
                 Browse trade guides
               </Link>
@@ -62,7 +62,7 @@ export default function BlogLibrary() {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 h-1 w-28 bg-[#D4AF37] sm:w-40" />
+        <div className="absolute bottom-0 left-0 h-1 w-28 bg-[#ffd13b] sm:w-40" />
       </section>
 
       <section className="border-y border-slate-200 bg-slate-50 px-4 py-8 sm:px-6 lg:px-8">
@@ -74,7 +74,7 @@ export default function BlogLibrary() {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search topics or keywords"
-              className="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-[#9A7720] focus:ring-2 focus:ring-[#D4AF37]/30"
+              className="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition placeholder:text-slate-500 focus:border-[#9A7720] focus:ring-2 focus:ring-[#ffd13b]/30"
             />
           </label>
           <label className="block">
@@ -82,7 +82,7 @@ export default function BlogLibrary() {
             <select
               value={activeCategory}
               onChange={(event) => setActiveCategory(event.target.value)}
-              className="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#9A7720] focus:ring-2 focus:ring-[#D4AF37]/30"
+              className="w-full rounded-md border border-slate-300 bg-white px-4 py-3 text-sm text-slate-900 outline-none transition focus:border-[#9A7720] focus:ring-2 focus:ring-[#ffd13b]/30"
             >
               {blogCategories.map((category) => (
                 <option key={category} value={category}>
@@ -116,7 +116,7 @@ export default function BlogLibrary() {
                       >
                         <Link
                           href={`/blogs/${post.slug}`}
-                          className="interactive-surface group flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-200 hover:border-[#D4AF37] hover:shadow-lg hover:shadow-slate-900/5"
+                          className="interactive-surface group flex h-full flex-col overflow-hidden rounded-lg border border-slate-200 bg-white shadow-sm transition duration-200 hover:border-[#ffd13b] hover:shadow-lg hover:shadow-slate-900/5"
                           style={{ animationDelay: `${index * 45}ms` }}
                         >
                           <div className="relative aspect-[16/10] overflow-hidden bg-slate-100">
@@ -205,7 +205,7 @@ export default function BlogLibrary() {
           </div>
           <Link
             href="/contactus"
-            className="inline-flex min-h-11 items-center justify-center rounded-md bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
+            className="inline-flex min-h-11 items-center justify-center rounded-md bg-[#ffd13b] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
           >
             Contact Trishulan
           </Link>

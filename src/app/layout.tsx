@@ -8,7 +8,7 @@ const siteUrl = (process.env.PUBLIC_SITE_URL || "https://www.trishulan.com").rep
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Import & Export from Andhra Pradesh, India | Trishulan",
+    default: "Trishulan Import & Export from Andhra Pradesh, India | Trishulan",
     template: "%s | Trishulan",
   },
   description:
@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     description:
       "Discover Trishulan's product portfolio and submit import-export enquiries from India.",
     url: "/",
-    images: ["/hero.jpg"],
+    images: ["/hero.jpeg"],
   },
   twitter: {
     card: "summary_large_image",
     title: "Trishulan | Import & Export from India",
     description:
       "Explore our product portfolio and contact Trishulan for trade enquiries.",
-    images: ["/hero.jpg"],
+    images: ["/hero.jpeg"],
   },
 };
 
@@ -55,7 +55,7 @@ export default function RootLayout({children}: Readonly<{ children: React.ReactN
   };
 
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body className="bg-white text-slate-900 antialiased">
         <script
           type="application/ld+json"

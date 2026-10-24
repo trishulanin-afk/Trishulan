@@ -25,7 +25,7 @@ function Footer() {
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-[#D4AF37]">
+              <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-[#ffd13b]">
                 <Image src="/logo.png" alt="Trishulan logo" width={40} height={40} className="h-full w-full object-cover" />
               </div>
               <div>
@@ -42,13 +42,13 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ffd13b]">
               Quick Links
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
               {footerLinks.map((link) => (
                 <li key={link.href}>
-                  <Link href={link.href} className="transition hover:text-[#D4AF37]">
+                  <Link href={link.href} className="transition hover:text-[#ffd13b]">
                     {link.label}
                   </Link>
                 </li>
@@ -57,7 +57,7 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ffd13b]">
               Business Focus
             </h3>
             <ul className="mt-4 space-y-2 text-sm text-slate-300">
@@ -69,7 +69,7 @@ function Footer() {
           </div>
 
           <div>
-            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#D4AF37]">
+            <h3 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ffd13b]">
               Contact us at
             </h3>
             <div className="mt-3 flex flex-col gap-1 text-sm">
@@ -79,9 +79,9 @@ function Footer() {
                   href={item.href}
                   target={item.href.startsWith("http") ? "_blank" : undefined}
                   rel={item.href.startsWith("http") ? "noreferrer" : undefined}
-                  className="flex items-center gap-2 rounded-md px-1 py-1 text-slate-200 transition hover:text-[#D4AF37]"
+                  className="flex items-center gap-2 rounded-md px-1 py-1 text-slate-200 transition hover:text-[#ffd13b]"
                 >
-                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#D4AF37] text-[8px] font-bold text-[#0B1F3A]">
+                  <span className="flex h-5 w-5 items-center justify-center rounded-full bg-[#ffd13b] text-[8px] font-bold text-[#0B1F3A]">
                     {item.icon}
                   </span>
                   <span className="text-xs font-medium">{item.label}</span>

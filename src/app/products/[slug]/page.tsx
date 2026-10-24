@@ -96,7 +96,7 @@ export default async function ProductDetailPage({ params }: ProductPageProps) {
                 <div className="mt-5 flex flex-col gap-3 sm:flex-row">
                   <Link
                     href={`/contactus?product=${encodeURIComponent(product.name)}#contact-form`}
-                    className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
+                    className="inline-flex min-h-12 items-center justify-center rounded-md bg-[#ffd13b] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
                   >
                     Enquire about {product.name}
                   </Link>

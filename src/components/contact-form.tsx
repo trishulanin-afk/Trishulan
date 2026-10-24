@@ -140,10 +140,10 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                 target={item.href.startsWith("http") ? "_blank" : undefined}
                 rel={item.href.startsWith("http") ? "noreferrer" : undefined}
                 aria-label={`${item.label}: ${item.value}`}
-                className="interactive-surface group flex min-h-32 flex-col rounded-xl border border-slate-200 bg-white p-3 text-[#0B1F3A] shadow-md shadow-slate-900/5 transition hover:border-[#D4AF37]/70 hover:shadow-lg sm:p-4"
+                className="interactive-surface group flex min-h-32 flex-col rounded-xl border border-slate-200 bg-white p-3 text-[#0B1F3A] shadow-md shadow-slate-900/5 transition hover:border-[#ffd13b]/70 hover:shadow-lg sm:p-4"
               >
                 <span
-                  className={`flex h-10 w-10 items-center justify-center rounded-lg ${item.brand === "whatsapp" ? "bg-[#25D366] text-white" : item.brand === "instagram" ? "bg-[linear-gradient(135deg,#833AB4_0%,#FD1D1D_55%,#FCAF45_100%)] text-white" : item.brand === "linkedin" ? "bg-[#0A66C2] text-white" : "bg-[#D4AF37] text-[#0B1F3A]"}`}
+                  className={`flex h-10 w-10 items-center justify-center rounded-lg ${item.brand === "whatsapp" ? "bg-[#25D366] text-white" : item.brand === "instagram" ? "bg-[linear-gradient(135deg,#833AB4_0%,#FD1D1D_55%,#FCAF45_100%)] text-white" : item.brand === "linkedin" ? "bg-[#0A66C2] text-white" : "bg-[#ffd13b] text-[#0B1F3A]"}`}
                   aria-hidden="true"
                 >
                   {item.brand === "instagram" ? (
@@ -170,7 +170,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                 <span className="mt-3 block text-[10px] font-medium uppercase tracking-[0.13em] text-slate-500">
                   {item.label === "Call / WhatsApp" ? "WhatsApp" : item.label}
                 </span>
-                <span className="mt-1 break-words text-sm font-semibold leading-5 text-[#0B1F3A] group-hover:text-[#8A6A1D]">
+                <span className="mt-1 wrap-break-word text-sm font-semibold leading-5 text-[#0B1F3A] group-hover:text-[#8A6A1D]">
                   {item.value}
                 </span>
                 <span className="mt-auto self-end pt-2 text-sm text-[#9A7720] transition-transform group-hover:translate-x-1" aria-hidden="true">↗</span>
@@ -251,7 +251,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                     value={form.name}
                     onChange={handleChange}
                     placeholder="Enter your name"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#D4AF37] focus:bg-white"
+                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#ffd13b] focus:bg-white"
                   />
                 </label>
 
@@ -263,7 +263,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                     value={form.company}
                     onChange={handleChange}
                     placeholder="Your company"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#D4AF37] focus:bg-white"
+                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#ffd13b] focus:bg-white"
                   />
                 </label>
               </div>
@@ -278,7 +278,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                     value={form.phone}
                     onChange={handleChange}
                     placeholder="+91 ..."
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#D4AF37] focus:bg-white"
+                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#ffd13b] focus:bg-white"
                   />
                 </label>
 
@@ -292,7 +292,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                     value={form.email}
                     onChange={handleChange}
                     placeholder="you@example.com"
-                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#D4AF37] focus:bg-white"
+                    className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none ring-0 transition placeholder:text-slate-400 focus:border-[#ffd13b] focus:bg-white"
                   />
                 </label>
               </div>
@@ -303,7 +303,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                   name="product"
                   value={selectedProduct}
                   onChange={handleChange}
-                  className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none transition focus:border-[#D4AF37] focus:bg-white"
+                  className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none transition focus:border-[#ffd13b] focus:bg-white"
                 >
                   <option value="">Select an option</option>
                   {products.map((product) => (
@@ -324,7 +324,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                   onChange={handleChange}
                   rows={5}
                   placeholder="Tell us about your required quantity, destination, specification, or trade need..."
-                  className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#D4AF37] focus:bg-white"
+                  className="mt-2 w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-base text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-[#ffd13b] focus:bg-white"
                 />
               </label>
 
@@ -364,7 +364,7 @@ export default function ContactForm({ contactCards, businessHighlights }: Contac
                   href={whatsappHref}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex min-h-12 flex-1 items-center justify-center rounded-md bg-[#D4AF37] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
+                  className="inline-flex min-h-12 flex-1 items-center justify-center rounded-md bg-[#ffd13b] px-5 py-3 text-sm font-semibold text-[#0B1F3A] transition hover:bg-[#e5c55a]"
                 >
                   Send on WhatsApp
                 </a>
