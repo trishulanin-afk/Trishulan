@@ -94,7 +94,7 @@ export default function AboutUsPage() {
           <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-200">
               <Image
-                src="/office/office1.png"
+                src="/office/office.png"
                 alt="Trishulan office exterior"
                 fill
                 sizes="(min-width: 1024px) 35vw, 100vw"
@@ -320,7 +320,7 @@ export default function AboutUsPage() {
             <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm">
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-200">
                 <Image
-                  src="/office/office2.png"
+                  src="/office/office2.jpeg"
                   alt="Trishulan warehouse and business operations"
                   fill
                   sizes="(min-width: 1024px) 35vw, 100vw"
