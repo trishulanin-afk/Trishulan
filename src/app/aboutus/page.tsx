@@ -47,12 +47,13 @@ export default function AboutUsPage() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero3.jpg"
+          src="/hero3.webp"
           alt="Trade and agricultural exports from India"
           fill
           priority
           sizes="100vw"
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
 
@@ -94,11 +95,12 @@ export default function AboutUsPage() {
           <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm">
             <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-200">
               <Image
-                src="/office/office.png"
+                src="/office/office.webp"
                 alt="Trishulan office exterior"
                 fill
                 sizes="(min-width: 1024px) 35vw, 100vw"
                 className="object-cover"
+                unoptimized
               />
             </div>
           </div>
@@ -217,11 +219,12 @@ export default function AboutUsPage() {
             <figure className="interactive-surface mx-auto w-full max-w-[250px] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm">
               <div className="relative aspect-[5/8] overflow-hidden bg-white">
                 <Image
-                  src="/Surya.jpeg"
+                  src="/Surya.webp"
                   alt="Founder Surya Sai Allamsetty"
                   fill
                   sizes="(min-width: 1024px) 20vw, 60vw"
                   className="object-cover"
+                  unoptimized
                 />
               </div>
               <figcaption className="border-t border-slate-200 px-4 py-4 text-center">
@@ -320,11 +323,12 @@ export default function AboutUsPage() {
             <div className="mx-auto w-full max-w-[420px] overflow-hidden rounded-2xl border border-slate-200 bg-slate-50 p-3 shadow-sm">
               <div className="relative aspect-[4/3] overflow-hidden rounded-xl bg-slate-200">
                 <Image
-                  src="/office/office2.jpeg"
+                  src="/office/office2.webp"
                   alt="Trishulan warehouse and business operations"
                   fill
                   sizes="(min-width: 1024px) 35vw, 100vw"
                   className="object-cover"
+                  unoptimized
                 />
               </div>
             </div>

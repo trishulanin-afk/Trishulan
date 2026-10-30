@@ -17,7 +17,7 @@ export const products: Product[] = [
   {
     slug: "cashew-nuts",
     name: "Cashew Nuts",
-    image: "/products/Cashew_Nuts.jpeg",
+    image: "/products/Cashew_Nuts.webp",
     alt: "Premium cashew nuts",
     description:
       "Cashew kernels for international buyers, with grade, product specifications, and packing discussed according to each order.",
@@ -65,7 +65,7 @@ export const products: Product[] = [
   {
     slug: "guava-plants",
     name: "Guava Plants",
-    image: "/products/Guava_Plants.jpeg",
+    image: "/products/Guava_Plants.webp",
     alt: "Healthy guava plants",
     description:
       "Guava planting material for growers and nurseries, with varieties and shipping requirements confirmed for each enquiry.",
@@ -113,7 +113,7 @@ export const products: Product[] = [
   {
     slug: "coffee-beans",
     name: "Coffee Beans",
-    image: "/products/Coffee_Seeds.jpeg",
+    image: "/products/Coffee_Seeds.webp",
     alt: "Coffee beans",
     description: "Coffee products for domestic and international sourcing enquiries.",
     details: ["Green Arabica and Robusta beans", "Roasted coffee beans", "Coffee powder", "Product specifications and packaging discussed by enquiry"],
@@ -121,7 +121,7 @@ export const products: Product[] = [
   {
     slug: "bananas",
     name: "Bananas",
-    image: "/products/Bananas.jpeg",
+    image: "/products/Bananas.webp",
     alt: "Fresh bananas",
     description: "Banana varieties supplied according to buyer requirements and market availability.",
     details: ["Cavendish, Robusta and Nendran varieties", "Tissue-cultured banana plants are also available for enquiries", "Handling, packaging and quantities confirmed for each requirement"],
@@ -129,7 +129,7 @@ export const products: Product[] = [
   {
     slug: "peanuts",
     name: "Peanuts",
-    image: "/products/Peanuts.jpg",
+    image: "/products/Peanuts.webp",
     alt: "Peanuts",
     description: "Groundnuts and peanut products for commercial sourcing requirements.",
     details: ["Bold and Java varieties", "Shelled and unshelled groundnuts", "Peanut kernels and blanched peanuts", "Grades and packaging based on buyer specifications"],
@@ -137,7 +137,7 @@ export const products: Product[] = [
   {
     slug: "biodegradable-covers",
     name: "Biodegradable Covers",
-    image: "/products/Biodegradable_Covers.jpg",
+    image: "/products/Biodegradable_Covers.webp",
     alt: "Biodegradable packaging covers",
     description: "Biodegradable and compostable alternatives for packaging and carrying needs.",
     details: ["Biodegradable carry bags and garbage bags", "Compostable shopping bags", "Compostable packaging covers", "Eco-friendly food packaging materials"],
@@ -145,7 +145,7 @@ export const products: Product[] = [
   {
     slug: "basmati-rice",
     name: "Basmati Rice",
-    image: "/products/Basmathi_Rice.png",
+    image: "/products/Basmathi_Rice.webp",
     alt: "Basmati rice",
     description: "Basmati varieties for quality-focused domestic and international buyers.",
     details: ["1121 Basmati", "Traditional Basmati", "Pusa Basmati", "Grades, packaging and quantities discussed by enquiry"],
@@ -153,7 +153,7 @@ export const products: Product[] = [
   {
     slug: "red-chillies",
     name: "Red Chillies",
-    image: "/products/Chillies.jpg",
+    image: "/products/Chillies.webp",
     alt: "Red chilli product",
     description: "Whole dried chillies and chilli products sourced to buyer specifications.",
     details: ["Whole dried red chillies and chilli powder", "Byadgi, Guntur Sannam and Teja varieties", "Grades and packaging formats discussed by enquiry"],
@@ -161,7 +161,7 @@ export const products: Product[] = [
   {
     slug: "furniture",
     name: "Furniture",
-    image: "/products/Furniture.jpeg",
+    image: "/products/Furniture.webp",
     alt: "Furniture products",
     description: "Furniture sourcing based on client specifications and market availability.",
     details: ["Product type, material, dimensions and finish can be specified by the buyer", "Packaging and order quantities discussed for each requirement", "Availability confirmed during enquiry"],
@@ -169,7 +169,7 @@ export const products: Product[] = [
   {
     slug: "machinery",
     name: "Machinery",
-    image: "/products/Machinery.jpg",
+    image: "/products/Machinery.webp",
     alt: "Industrial machinery",
     description: "Machinery and equipment sourcing coordinated around the client's stated requirements.",
     details: ["Share equipment type and intended application", "Technical specifications and quantity reviewed per enquiry", "Sourcing and availability confirmed against market conditions"],
@@ -177,7 +177,7 @@ export const products: Product[] = [
   {
     slug: "dry-fruits",
     name: "Dry Fruits",
-    image: "/products/Dry_Fruits.jpg",
+    image: "/products/Dry_Fruits.webp",
     alt: "Dry fruits including almonds and walnuts",
     description: "A range of nuts and dry fruits for buyer-specific sourcing enquiries.",
     details: ["Almonds and walnuts", "Raisins and dates", "Other dry fruits subject to availability", "Grades, packaging and quantities discussed by enquiry"],
@@ -185,7 +185,7 @@ export const products: Product[] = [
   {
     slug: "vegetables",
     name: "Vegetables",
-    image: "/products/Vegetables.jpg",
+    image: "/products/Vegetables.webp",
     alt: "Fresh vegetables",
     description: "Vegetable sourcing for agricultural trade and customer-specific requirements.",
     details: ["Product selection depends on season and market availability", "Grades, packing formats and quantities discussed by enquiry", "Import or export conditions are confirmed for the destination market"],
@@ -193,7 +193,7 @@ export const products: Product[] = [
   {
     slug: "fruits",
     name: "Fruits",
-    image: "/products/Fruits.jpeg",
+    image: "/products/Fruits.webp",
     alt: "Fresh fruits",
     description: "Fresh fruit sourcing across selected varieties and seasonal produce.",
     details: ["Mangoes: Alphonso, Kesar and Banganapalli", "Fresh papaya and other seasonal fruits", "Bananas and guava varieties are listed separately", "Availability, packaging and quantities confirmed by enquiry"],
@@ -201,7 +201,7 @@ export const products: Product[] = [
   {
     slug: "raw-materials",
     name: "Raw Materials",
-    image: "/products/Imports_Exports.jpeg",
+    image: "/products/Imports_Exports.webp",
     alt: "Imported raw materials",
     description: "Agricultural and other raw materials sourced or imported according to client requirements.",
     details: ["Agricultural raw materials and processed food products", "Other materials can be discussed for client-specific import requirements", "Specifications, destination and quantity are reviewed before confirming availability"],

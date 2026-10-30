@@ -15,17 +15,17 @@ const certificates = [
   {
     title: "Import Export Code Certificate",
     image:
-      "/certificates/Import-Export-Code-IEC/Import%20Export%20Code%20(IEC)_page-0001.jpg",
+      "/certificates/Import-Export-Code-IEC/Import%20Export%20Code%20(IEC)_page-0001.webp",
     alt: "Trishulan Import Export Code certificate",
   },
   {
     title: "RCMC Certificate",
-    image: "/certificates/RCMC/RCMC_page-0001.jpg",
+    image: "/certificates/RCMC/RCMC_page-0001.webp",
     alt: "Trishulan RCMC certificate",
   },
   {
     title: "Registration Certificate",
-    image: "/certificates/Registration/Registration_page-0001.jpg",
+    image: "/certificates/Registration/Registration_page-0001.webp",
     alt: "Trishulan registration certificate",
   },
 ];
@@ -35,12 +35,13 @@ export default function CertificatesPage() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero2.jpg"
+          src="/hero2.webp"
           alt="Trade credentials and compliance documents"
           fill
           priority
           sizes="100vw"
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0B1F3A]/80 via-[#0B1F3A]/60 to-[#0B1F3A]/5" />
 
@@ -98,6 +99,7 @@ export default function CertificatesPage() {
                     fill
                     sizes="(min-width: 768px) 50vw, 100vw"
                     className="object-contain p-3 sm:p-5"
+                    unoptimized
                   />
                 </div>
                 <h3 className="border-t border-slate-200 px-5 py-4 text-base font-semibold text-[#0B1F3A]">

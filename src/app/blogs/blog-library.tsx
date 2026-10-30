@@ -24,12 +24,13 @@ export default function BlogLibrary() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero4.jpg"
+          src="/hero4.webp"
           alt="International shipping and trade research"
           fill
           priority
           sizes="100vw"
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/75 to-[#0B1F3A]/20" />
 
@@ -126,6 +127,7 @@ export default function BlogLibrary() {
                               fill
                               sizes="(min-width: 1280px) 20vw, (min-width: 640px) 50vw, 100vw"
                               className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                              unoptimized
                             />
                           </div>
                           <div className="flex flex-1 flex-col p-4">

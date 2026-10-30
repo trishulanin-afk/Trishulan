@@ -16,28 +16,28 @@ const productCategories = [
   {
     name: "Dry Fruits",
     description: "Premium Dry Fruits for reliable supply and consistent trade enquiries.",
-    image: "/products/Dry_Fruits.jpg",
+    image: "/products/Dry_Fruits.webp",
     alt: "Dry Fruits",
     slug: "dry-fruits",
   },
   {
     name: "Vegetables",
     description: "Vegetable sourcing for agricultural trade and customer-specific requirements.",
-    image: "/products/Vegetables.jpg",
+    image: "/products/Vegetables.webp",
     alt: "Fresh vegetables",
     slug: "vegetables",
   },
   {
     name: "Furniture",
     description: "Furniture sourcing based on client specifications and market availability.",
-    image: "/products/Furniture.jpeg",
+    image: "/products/Furniture.webp",
     alt: "Furniture products",
     slug: "furniture",
   },
   {
     name: "Machinery",
     description: "Machinery and equipment sourcing coordinated around client requirements.",
-    image: "/products/Machinery.jpg",
+    image: "/products/Machinery.webp",
     alt: "Industrial machinery",
     slug: "machinery",
   },
@@ -69,12 +69,13 @@ export default function Home() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero.jpeg"
+          src="/hero.webp"
           alt="Cargo containers ready for international shipping"
           fill
           priority
           sizes="100vw"
           className="home-hero-poster -z-20 object-cover"
+          unoptimized
         />
         <video
           autoPlay
@@ -82,7 +83,7 @@ export default function Home() {
           loop
           playsInline
           preload="none"
-          poster="/hero.jpeg"
+          poster="/hero.webp"
           aria-hidden="true"
           className="home-hero-video absolute inset-0 -z-10 h-full w-full object-cover"
         >
@@ -174,6 +175,7 @@ export default function Home() {
                     fill
                     sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition duration-300 group-hover:scale-[1.03]"
+                    unoptimized
                   />
                 </div>
                 <div className="p-5">
@@ -257,11 +259,12 @@ export default function Home() {
           </div>
           <div className="relative aspect-[16/10] overflow-hidden rounded-lg bg-slate-100">
             <Image
-              src="/certificates/Import-Export-Code-IEC/Import%20Export%20Code%20(IEC)_page-0001.jpg"
+              src="/certificates/Import-Export-Code-IEC/Import%20Export%20Code%20(IEC)_page-0001.webp"
               alt="Trishulan Import Export Code certificate"
               fill
               sizes="(min-width: 1024px) 45vw, 100vw"
               className="object-contain p-4 sm:p-7"
+              unoptimized
             />
           </div>
         </div>

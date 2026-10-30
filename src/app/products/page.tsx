@@ -31,12 +31,13 @@ export default function ProductsPage() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero5.png"
+          src="/hero5.webp"
           alt="International product sourcing and trade"
           fill
           priority
           sizes="100vw"
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 z-0 bg-linear-to-r from-[#0B1F3A]/99 via-[#0B1F3A]/50 to-[#0B1F3A]/5" />
 

@@ -21,7 +21,7 @@ function Header() {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <Link href="/" className="flex items-center gap-3" aria-label="Trishulan home">
           <div className="flex h-11 w-11 items-center justify-center overflow-hidden rounded-xl bg-[#ffd13b] shadow-lg shadow-[#ffd13b]/20">
-            <Image src="/logo.png" alt="Trishulan logo" width={44} height={44} className="h-full w-full object-cover" />
+            <Image src="/logo.webp" alt="Trishulan logo" width={44} height={44} className="h-full w-full object-cover" unoptimized/>
           </div>
           <div>
             <div className="text-lg tracking-wide text-white">TRISHULAN</div>

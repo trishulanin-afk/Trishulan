@@ -48,12 +48,13 @@ export default function ContactUsPage() {
     <main>
       <section className="site-hero relative isolate overflow-hidden bg-[#0B1F3A] text-white">
         <Image
-          src="/hero6.jpeg"
+          src="/hero6.webp"
           alt="International trade and shipping logistics"
           fill
           priority
           sizes="100vw"
           className="object-cover"
+          unoptimized
         />
         <div className="absolute inset-0 z-0 bg-gradient-to-r from-[#0B1F3A]/95 via-[#0B1F3A]/70 to-[#0B1F3A]/5" />
 

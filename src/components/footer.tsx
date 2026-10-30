@@ -26,7 +26,7 @@ function Footer() {
           <div className="lg:col-span-1">
             <div className="flex items-center gap-3">
               <div className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-[#ffd13b]">
-                <Image src="/logo.png" alt="Trishulan logo" width={40} height={40} className="h-full w-full object-cover" />
+                <Image src="/logo.webp" alt="Trishulan logo" width={40} height={40} className="h-full w-full object-cover" unoptimized/>
               </div>
               <div>
                 <div className="text-base font-bold tracking-wide">TRISHULAN</div>
